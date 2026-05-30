@@ -1,9 +1,7 @@
-export default function GlassCard({ children, className = "" }) {
+export default function GlassCard({ children }) {
   return (
-    <main
-      className="min-h-screen flex items-center justify-center px-6 py-16 bg-gradient-to-br from-gray-50 via-white to-indigo-50 dark:from-black dark:via-black dark:to-gray-900"
-    >
+    <div className="w-full max-w-4xl rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-white/5 backdrop-blur-xl shadow-xl p-10 md:p-14 space-y-8">
       {children}
-    </main>
+    </div>
   );
 }
