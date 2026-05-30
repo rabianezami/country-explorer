@@ -1,10 +1,11 @@
 import GlassCard from "@/components/GlassCard";
+import FeatureCard from "@/components/FeatureCard";
+import PageWrapper from "@/components/PageWrapper";
 
 export default function AboutPage() {
   return (
-    <GlassCard>
-
-      <div className="w-full max-w-4xl rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-white/5 backdrop-blur-xl shadow-xl p-10 md:p-14 space-y-8">
+    <PageWrapper>
+      <GlassCard>
 
         {/* Title */}
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white text-center">
@@ -13,48 +14,33 @@ export default function AboutPage() {
 
         {/* Description */}
         <p className="text-center text-gray-600 dark:text-gray-300 leading-relaxed">
-          World Explorer is a modern Next.js application that lets users explore
-          countries from all around the world with real-time data.
+           World Explorer is a Next.js project that uses real API 
+           data to display countries around the world. It practices
+           App Router, file-based routing, layouts, server components, client components, data fetching, caching, and dynamic routes.
         </p>
 
         {/* Feature Grid */}
         <div className="grid md:grid-cols-2 gap-6">
 
-          <div className="p-5 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800">
-            <h3 className="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">
-              🌍 API Data
-            </h3>
-            <p className="text-sm text-gray-600 dark:text-gray-300">
-              Uses REST Countries API to fetch live country information.
-            </p>
-          </div>
+          <FeatureCard
+            title="🌍 API Data"
+            description="Uses REST Countries API to fetch live country information."
+          />
 
-          <div className="p-5 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800">
-            <h3 className="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">
-              ⚡ Next.js Features
-            </h3>
-            <p className="text-sm text-gray-600 dark:text-gray-300">
-              Built with App Router, Server Components, Client Components and dynamic routing.
-            </p>
-          </div>
+          <FeatureCard
+            title="⚡ Next.js Features"
+            description="Built with App Router, Server Components, Client Components and dynamic routing."
+          />
 
-          <div className="p-5 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800">
-            <h3 className="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">
-              🧠 Learning Goals
-            </h3>
-            <p className="text-sm text-gray-600 dark:text-gray-300">
-              Practicing caching, client components, Server Components and data fetching.
-            </p>
-          </div>
+          <FeatureCard
+            title="🧠 Learning Goals"
+            description="Practicing caching, client components, Server Components and data fetching."
+          />
 
-          <div className="p-5 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800">
-            <h3 className="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">
-              🎯 Purpose
-            </h3>
-            <p className="text-sm text-gray-600 dark:text-gray-300">
-              Help users explore countries easily with a clean UI.
-            </p>
-          </div>
+          <FeatureCard
+            title="🎯 Purpose"
+            description="Help users explore countries easily with a clean UI."
+          />
 
         </div>
 
@@ -65,7 +51,7 @@ export default function AboutPage() {
           </span>
         </div>
 
-      </div>
-    </GlassCard>
+      </GlassCard>
+    </PageWrapper>
   );
 }
