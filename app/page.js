@@ -1,4 +1,5 @@
 import Container from "@/components/container";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -21,9 +22,9 @@ export default function Home() {
             Start your journey with a single click.
           </p>
 
-          <button className="w-max mx-auto md:mx-0 rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700">
+          <Link href="/countries" className="w-max mx-auto md:mx-0 rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700">
             Explore Now
-          </button>
+          </Link>
         </div>
 
         {/* Image Section */}
