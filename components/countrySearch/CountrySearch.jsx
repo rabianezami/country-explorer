@@ -1,4 +1,5 @@
 "use client";
+import CountryCardContent from "@/components/countryCard/CountryCardContent";
 
 import { useEffect, useState } from "react";
 import FiltersBar from "./FiltersBar";
@@ -13,7 +14,7 @@ export default function CountrySearch() {
   useEffect(() => {
     async function fetchCountries() {
       try {
-        const res = await fetch("https://restcountries.com/v3.1/all");
+        const res = await fetch("https://restcountries.com/v2/all?fields=name,flags,region,population,alpha3Code");
         const data = await res.json();
 
         setCountries(Array.isArray(data) ? data : []);
@@ -28,15 +29,20 @@ export default function CountrySearch() {
   }, []);
 
   const filteredCountries = countries.filter((country) => {
-    const matchesSearch = country.name.common
+    const name = country?.name || "";
+
+    const matchesSearch = name
       .toLowerCase()
-      .includes(searchTerm.toLowerCase());
+      .includes(searchTerm.trim().toLowerCase());
 
     const matchesRegion =
       region === "all" || country.region === region;
 
     return matchesSearch && matchesRegion;
   });
+
+  console.log("RESULT COUNT:", filteredCountries.length);
+  console.log("FIRST RESULT:", filteredCountries[0]);
 
   if (loading) {
     return (
@@ -60,14 +66,18 @@ export default function CountrySearch() {
           No countries found.
         </p>
       ) : (
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {filteredCountries.map((country) => (
-            <CountryCard
-              key={country.cca3}
-              country={country}
-            />
-          ))}
-        </div>
+       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-stretch">
+  {filteredCountries.map((country) => (
+    <CountryCard key={country.alpha3Code} code={country.alpha3Code}>
+      <CountryCardContent
+        flag={country.flags?.png}
+        name={country.name}
+        region={country.region}
+        population={country.population}
+      />
+    </CountryCard>
+  ))}
+</div>
       )}
     </div>
   );
