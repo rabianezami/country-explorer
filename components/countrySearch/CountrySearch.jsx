@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import FiltersBar from "./FiltersBar";
-import CountryCard from "././CountryCard/CountryCard";
+import CountryCard from "@/components/countryCard/CountryCard";
 
 export default function CountrySearch() {
   const [countries, setCountries] = useState([]);

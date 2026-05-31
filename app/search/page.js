@@ -1,5 +1,5 @@
 
-import CountrySearch from "@/components/CountrySearch";
+import CountrySearch from "@/components/countrySearch/CountrySearch";
 
 export default function SearchPage() {
   return (

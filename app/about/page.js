@@ -1,6 +1,6 @@
-import GlassCard from "@/components/GlassCard";
-import FeatureCard from "@/components/FeatureCard";
-import PageWrapper from "@/components/PageWrapper";
+import GlassCard from "@/components/common/GlassCard";
+import FeatureCard from "@/components/common/FeatureCard";
+import PageWrapper from "@/components/common/PageWrapper";
 
 export default function AboutPage() {
   return (
