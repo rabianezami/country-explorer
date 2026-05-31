@@ -15,7 +15,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <h1 className="font-bold text-xl md:text-2xl text-indigo-600 dark:text-white">
-          Country Explorer
+           World Explorer
         </h1>
 
         {/* Links */}
